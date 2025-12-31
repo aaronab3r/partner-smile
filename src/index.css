@@ -1,0 +1,40 @@
+@import "tailwindcss";
+
+@theme {
+  --color-gold: #D4AF37;
+  --color-gold-light: #F4CF57;
+  --color-gold-dark: #B48F17;
+}
+
+@layer base {
+  body {
+    @apply bg-neutral-950 text-neutral-200 antialiased;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply text-white font-semibold;
+  }
+}
+
+@layer utilities {
+  .text-gold {
+    color: var(--color-gold);
+  }
+  .border-gold {
+    border-color: var(--color-gold);
+  }
+  .bg-gold {
+    background-color: var(--color-gold);
+  }
+  .bg-gold-gradient {
+    background: linear-gradient(135deg, var(--color-gold) 0%, var(--color-gold-light) 50%, var(--color-gold-dark) 100%);
+  }
+  .text-gold-gradient {
+    background: linear-gradient(135deg, var(--color-gold) 0%, var(--color-gold-light) 50%, var(--color-gold-dark) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .glass-panel {
+    @apply bg-neutral-900/50 backdrop-blur-md border border-white/10;
+  }
+}
