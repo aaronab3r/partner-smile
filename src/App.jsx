@@ -14,13 +14,11 @@ const App = () => {
   };
 
   const openCalendly = () => {
-    // Placeholder for Calendly modal
-    alert("Opening Calendly Scheduler...");
+    window.open('https://cal.com/partner-smile/15min', '_blank');
   };
 
   const handlePayment = () => {
-    // Placeholder for Stripe payment
-    alert("Redirecting to Stripe Payment...");
+    window.open('https://buy.stripe.com/3cI5kDf7gctXcqSe1X97G00', '_blank');
   };
 
   const fadeInUp = {
@@ -105,7 +103,7 @@ const App = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-lg md:text-xl text-neutral-400 max-w-3xl mx-auto mb-12 leading-relaxed"
           >
-            The exclusive partnership engine that positions your practice inside the city's top luxury residential towers and med spas. No ads. No discounts. Just status.
+            The exclusive partnership engine that positions your practice inside the city's top luxury residential towers and med spas. No ads. Just status.
           </motion.p>
 
           {/* VSL Container */}
@@ -283,7 +281,7 @@ const App = () => {
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="flex items-center gap-2">
             <img src={logo} alt="Logo" className="h-8 w-auto rounded-full grayscale opacity-50" />
-            <span className="text-neutral-500 text-sm">© 2025 Partner Smile. All rights reserved.</span>
+            <span className="text-neutral-500 text-sm">© 2026 Partner Smile. All rights reserved.</span>
           </div>
           
           <div className="flex gap-8">
