@@ -6,19 +6,8 @@ import logo from './assets/logo.jpeg';
 const App = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const scrollToPricing = () => {
-    const pricingSection = document.getElementById('pricing');
-    if (pricingSection) {
-      pricingSection.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
   const openCalendly = () => {
     window.open('https://cal.com/partner-smile/15min', '_blank');
-  };
-
-  const handlePayment = () => {
-    window.open('https://buy.stripe.com/3cI5kDf7gctXcqSe1X97G00', '_blank');
   };
 
   const fadeInUp = {
@@ -53,7 +42,7 @@ const App = () => {
               Client Login
             </a>
             <button 
-              onClick={scrollToPricing}
+              onClick={openCalendly}
               className="bg-gold-gradient text-neutral-950 px-6 py-2.5 rounded-2xl font-semibold text-sm hover:scale-105 transition-transform duration-300 shadow-[0_0_20px_rgba(212,175,55,0.3)]"
             >
               Check Availability
@@ -74,7 +63,7 @@ const App = () => {
             className="md:hidden absolute top-20 left-0 right-0 bg-neutral-900 border-b border-white/10 p-6 flex flex-col gap-4"
           >
             <a href="https://dashboard.stripe.com/login" target="_blank" rel="noopener noreferrer" className="text-neutral-300 hover:text-gold">Client Login</a>
-            <button onClick={() => { scrollToPricing(); setIsMenuOpen(false); }} className="bg-gold-gradient text-neutral-950 px-6 py-3 rounded-2xl font-semibold w-full">
+            <button onClick={() => { openCalendly(); setIsMenuOpen(false); }} className="bg-gold-gradient text-neutral-950 px-6 py-3 rounded-2xl font-semibold w-full">
               Check Availability
             </button>
           </motion.div>
@@ -93,8 +82,8 @@ const App = () => {
             transition={{ duration: 0.8 }}
             className="text-5xl md:text-7xl font-bold mb-6 leading-tight"
           >
-            <span className="text-gold-gradient">Acquire High-Net-Worth</span><br />
-            <span className="text-white">Patients Without Ad Spend.</span>
+            <span className="text-gold-gradient">The Exclusive Patient</span><br />
+            <span className="text-white">Acquisition Partner for Dentists.</span>
           </motion.h1>
           
           <motion.p 
@@ -103,7 +92,7 @@ const App = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-lg md:text-xl text-neutral-400 max-w-3xl mx-auto mb-12 leading-relaxed"
           >
-            The exclusive partnership engine that positions your practice inside the city's top luxury residential towers and med spas. No ads. Just status.
+            The exclusive partnership engine that positions your dental practice inside the city's top luxury residential towers and med spas. No ads. Just status.
           </motion.p>
 
           {/* VSL Container */}
@@ -113,15 +102,9 @@ const App = () => {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="relative max-w-4xl mx-auto mb-12"
           >
-            <video
-              className="w-full aspect-video rounded-3xl shadow-2xl border border-gold/30"
-              controls
-              playsInline
-              poster="/thumbnail.jpg"
-            >
-              <source src="/PartnerSmileVideo.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
+            <div className="w-full aspect-video rounded-3xl shadow-2xl border border-gold/30 bg-neutral-900 flex items-center justify-center">
+              <p className="text-gold font-medium tracking-widest uppercase text-sm">Territory Availability Protocol</p>
+            </div>
           </motion.div>
 
           <motion.div 
@@ -131,7 +114,7 @@ const App = () => {
             className="flex flex-col sm:flex-row items-center justify-center gap-4"
           >
             <button 
-              onClick={scrollToPricing}
+              onClick={openCalendly}
               className="w-full sm:w-auto bg-gold-gradient text-neutral-950 px-8 py-4 rounded-2xl font-bold text-lg hover:scale-105 transition-transform duration-300 shadow-[0_0_30px_rgba(212,175,55,0.4)]"
             >
               Check Territory Availability
@@ -160,12 +143,12 @@ const App = () => {
               {
                 icon: <Lock className="w-8 h-8 text-gold" />,
                 title: "Category Exclusivity",
-                desc: "We partner with only one cosmetic practice per zip code. Lock out your competitors."
+                desc: "We partner with only one dental practice per zip code. Lock out your competitors."
               },
               {
                 icon: <Users className="w-8 h-8 text-gold" />,
                 title: "Zero Ad Fatigue",
-                desc: "Reach patients in their trusted physical environments, not their crowded Instagram feed."
+                desc: "Reach high-value patients in their trusted physical environments, not their crowded Instagram feed."
               },
               {
                 icon: <Building2 className="w-8 h-8 text-gold" />,
@@ -225,57 +208,6 @@ const App = () => {
         </div>
       </section>
 
-      {/* Pricing / Offer */}
-      <section id="pricing" className="py-24 px-6 relative">
-        <div className="max-w-4xl mx-auto">
-          <motion.div 
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            className="glass-panel rounded-[2.5rem] p-8 md:p-12 border border-gold/30 relative overflow-hidden"
-          >
-            <div className="absolute top-0 right-0 w-64 h-64 bg-gold/10 blur-[100px] rounded-full pointer-events-none" />
-            
-            <div className="grid md:grid-cols-2 gap-12 items-center">
-              <div>
-                <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">Partner Smile <span className="text-gold">Exclusive</span></h2>
-                <p className="text-neutral-400 mb-8">Complete access to the luxury partnership engine.</p>
-                
-                <div className="space-y-4 mb-8">
-                  {[
-                    "Exclusive Zip Code Lock",
-                    "Luxury Residential Placement",
-                    "Med Spa Partnership Matching",
-                    "Digital Access Portal Setup",
-                    "Concierge Support"
-                  ].map((feature, i) => (
-                    <div key={i} className="flex items-center gap-3">
-                      <div className="w-6 h-6 rounded-full bg-gold/20 flex items-center justify-center flex-shrink-0">
-                        <Check className="w-3.5 h-3.5 text-gold" />
-                      </div>
-                      <span className="text-neutral-200">{feature}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              <div className="bg-neutral-900/50 rounded-3xl p-8 border border-white/5 text-center">
-                <p className="text-neutral-400 text-sm mb-2 uppercase tracking-wider">Monthly Membership</p>
-                <div className="text-5xl font-bold text-white mb-2">$497<span className="text-xl text-neutral-500 font-normal">/mo</span></div>
-                <p className="text-neutral-500 text-sm mb-8">Cancel anytime. No long-term contracts.</p>
-                
-                <button 
-                  onClick={handlePayment}
-                  className="w-full bg-gold-gradient text-neutral-950 py-4 rounded-xl font-bold text-lg hover:scale-105 transition-transform duration-300 shadow-lg shadow-gold/20 flex items-center justify-center gap-2"
-                >
-                  Secure Your Territory <ArrowRight className="w-5 h-5" />
-                </button>
-              </div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
       {/* Footer */}
       <footer className="py-12 px-6 border-t border-white/5 bg-neutral-950">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
@@ -286,7 +218,6 @@ const App = () => {
           
           <div className="flex gap-8">
             <a href="https://dashboard.stripe.com/login" className="text-sm text-neutral-500 hover:text-gold transition-colors">Client Login</a>
-            <a href="#" className="text-sm text-neutral-500 hover:text-gold transition-colors">Contact Support</a>
           </div>
         </div>
       </footer>
